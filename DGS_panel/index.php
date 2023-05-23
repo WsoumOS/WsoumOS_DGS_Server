@@ -265,7 +265,7 @@ body {
 		<div class="hrif">
 		<a href="/">
 		<!--img class="logo_b" src="/img/" /-->
-		<img class="logo_b" src="/img/ws-icon-2.png" />
+		<img class="logo_b" src="img/ws-icon-2.png" />
 		<!--img class="logo_m" src="/img/mini_logo_blow.png"-->
 		</a>
 		</div>
