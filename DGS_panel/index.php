@@ -88,6 +88,60 @@ sudo apt install ./phpldapadmin_1.2.6.3-0.2_all.deb");
 	$output = shell_exec("sudo apt install phpmyadmin");
 	echo "<div class='msg'>phpmyadmin installed <br/>".$output."</div>";
 	
+} elseif($_GET["action"]=="remove" && $_GET["package"]=="cockpit-machines"){
+	$output = shell_exec("sudo apt remove cockpit-machines");
+	echo "<div class='msg'>cockpit-machines removed <br/>".$output."</div>";
+	
+} elseif($_GET["action"]=="remove" && $_GET["package"]=="ldap"){
+	$output = shell_exec("sudo apt remove slapd ldap-utils");
+	echo "<div class='msg'>ldap removed <br/>".$output."</div>";
+	
+} elseif($_GET["action"]=="remove" && $_GET["package"]=="phpldapadmin"){
+	$output = shell_exec("sudo apt remove phpldapadmin");
+	echo "<div class='msg'>phpldapadmin removed <br/>".$output."</div>";
+	
+} elseif($_GET["action"]=="remove" && $_GET["package"]=="lam"){
+	$output = shell_exec("sudo apt remove ldap-account-manager");
+	echo "<div class='msg'>lam removed <br/>".$output."</div>";
+	
+} elseif($_GET["action"]=="remove" && $_GET["package"]=="dns"){
+	$output = shell_exec("sudo apt remove bind9");
+	echo "<div class='msg'>dns removed <br/>".$output."</div>";
+	
+} elseif($_GET["action"]=="remove" && $_GET["package"]=="proxy"){
+	$output = shell_exec("sudo apt remove squid");
+	echo "<div class='msg'>proxy removed <br/>".$output."</div>";
+	
+} elseif($_GET["action"]=="remove" && $_GET["package"]=="webmin"){
+	$output = shell_exec("sudo apt remove webmin");
+	echo "<div class='msg'>webmin removed <br/>".$output."</div>";
+	
+} elseif($_GET["action"]=="remove" && $_GET["package"]=="mail"){
+	$output = shell_exec("sudo apt remove sendmail");
+	echo "<div class='msg'>mail removed ".$output."</div>";
+	
+} elseif($_GET["action"]=="remove" && $_GET["package"]=="torrent"){
+	$output = shell_exec("sudo apt remove transmission-cli transmission-daemon");
+	echo "<div class='msg'>cockpit-machines removed <br/>".$output."</div>";
+	
+	
+	
+} elseif($_GET["action"]=="remove" && $_GET["package"]=="mysql"){
+	$output = shell_exec("sudo apt remove mysql");
+	echo "<div class='msg'>mysql removed <br/>".$output."</div>";
+	
+} elseif($_GET["action"]=="remove" && $_GET["package"]=="phpmyadmin"){
+	$output = shell_exec("sudo apt remove phpmyadmin");
+	echo "<div class='msg'>phpmyadmin removed <br/>".$output."</div>";
+	
+} elseif($_GET["action"]=="update"){
+	$output = shell_exec("sudo apt update");
+	echo "<div class='msg'>packages updated <br/>".$output."</div>";
+	
+} elseif($_GET["action"]=="upgrade"){
+	$output = shell_exec("sudo apt upgrade");
+	echo "<div class='msg'>packages upgraded <br/>".$output."</div>";
+	
 } else {
 	
 }
@@ -176,6 +230,44 @@ sudo apt install ./phpldapadmin_1.2.6.3-0.2_all.deb");
 		<a href="?action=install&package=cockpit-machines" class="card install">
 			<h2>Install cockpit-machines</h2>
 			<p>Install VM management tool</p>
+		</a>
+		
+	<!--/div>
+	<div class="container"-->
+
+		<a href="?action=remove&package=ldap" class="card remove">
+			<h2>Remove LDAP</h2>
+			<p>Remove Lightweight Directory Access Protocol</p>
+		</a>
+
+		<a href="?action=remove&package=lam" class="card remove">
+			<h2>Remove Ldap-account-manager</h2>
+			<p>Remove LDAP management tool</p>
+		</a>
+
+		<a href="?action=remove&package=phpldapadmin" class="card remove">
+			<h2>Remove PhpLDAPadmin</h2>
+			<p>Remove LDAP administration tool</p>
+		</a>
+
+		<a href="?action=remove&package=phpmyadmin" class="card remove">
+			<h2>Remove PhpMyadmin</h2>
+			<p>Remove Mysql administration tool</p>
+		</a>
+	
+		<a href="?action=remove&package=cockpit-machines" class="card remove">
+			<h2>Remove cockpit-machines</h2>
+			<p>Remove VM management tool</p>
+		</a>
+	
+		<a href="?action=update" class="card update">
+			<h2>Update Packages</h2>
+			<p>Update System Packages</p>
+		</a>
+	
+		<a href="?action=upgrade" class="card update">
+			<h2>Upgrade Packages</h2>
+			<p>Upgrade System Packages</p>
 		</a>
 		
 	</div>

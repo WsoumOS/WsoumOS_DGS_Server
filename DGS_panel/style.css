@@ -167,7 +167,15 @@ body {
 }
 
 .install {
+	background: #d7fae7;
+}
+
+.update {
 	background: #d7f4fa;
+}
+
+.remove {
+	background: #fae9d7;
 }
 
 
