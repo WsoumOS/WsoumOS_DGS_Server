@@ -42,107 +42,105 @@
 
 //	by default apache cockpit ***cockpit-navigator
 if($_GET["action"]=="install" && $_GET["package"]=="cockpit-machines"){
-	$output = shell_exec("sudo apt install cockpit-machines");
+	$output = shell_exec("sudo apt install -y cockpit-machines");
 	echo "<div class='msg'>cockpit-machines installed <br/>".$output."</div>";
 	
 } elseif($_GET["action"]=="install" && $_GET["package"]=="ldap"){
-	$output = shell_exec("sudo apt install slapd ldap-utils");
+	$output = shell_exec("sudo apt install -y slapd ldap-utils");
 	echo "<div class='msg'>ldap installed <br/>".$output."</div>";
 	
 } elseif($_GET["action"]=="install" && $_GET["package"]=="phpldapadmin"){
 	$output = shell_exec("wget http://deb.debian.org/debian/pool/main/p/phpldapadmin/phpldapadmin_1.2.6.3-0.2_all.deb
-sudo apt install ./phpldapadmin_1.2.6.3-0.2_all.deb");
+sudo apt install -y ./phpldapadmin_1.2.6.3-0.2_all.deb");
 	echo "<div class='msg'>phpldapadmin installed <br/>".$output."</div>";
 	
 } elseif($_GET["action"]=="install" && $_GET["package"]=="lam"){
-	$output = shell_exec("wget http://prdownloads.sourceforge.net/lam/ldap-account-manager_8.1-1_all.deb && sudo apt install -f ./ldap-account-manager_8.1-1_all.deb");
+	$output = shell_exec("wget http://prdownloads.sourceforge.net/lam/ldap-account-manager_8.1-1_all.deb && sudo apt install -y -f ./ldap-account-manager_8.1-1_all.deb");
 	echo "<div class='msg'>lam installed <br/>".$output."</div>";
 	
 } elseif($_GET["action"]=="install" && $_GET["package"]=="dns"){
-	$output = shell_exec("sudo apt install bind9");
+	$output = shell_exec("sudo apt install -y bind9");
 	echo "<div class='msg'>dns installed <br/>".$output."</div>";
 	
 } elseif($_GET["action"]=="install" && $_GET["package"]=="proxy"){
-	$output = shell_exec("sudo apt install squid");
+	$output = shell_exec("sudo apt install -y squid");
 	echo "<div class='msg'>proxy installed <br/>".$output."</div>";
 	
 } elseif($_GET["action"]=="install" && $_GET["package"]=="webmin"){
-	$output = shell_exec("sudo apt install webmin");
+	$output = shell_exec("sudo apt install -y webmin");
 	echo "<div class='msg'>webmin installed <br/>".$output."</div>";
 	
 } elseif($_GET["action"]=="install" && $_GET["package"]=="mail"){
-	$output = shell_exec("sudo apt install sendmail");
+	$output = shell_exec("sudo apt install -y sendmail");
 	echo "<div class='msg'>mail installed ".$output."</div>";
 	
 } elseif($_GET["action"]=="install" && $_GET["package"]=="torrent"){
-	$output = shell_exec("sudo apt install transmission-cli transmission-daemon");
+	$output = shell_exec("sudo apt install -y transmission-cli transmission-daemon");
 	echo "<div class='msg'>cockpit-machines installed <br/>".$output."</div>";
 	
 	
 	
 } elseif($_GET["action"]=="install" && $_GET["package"]=="mysql"){
-	$output = shell_exec("sudo apt install mysql");
+	$output = shell_exec("sudo apt install -y mysql");
 	echo "<div class='msg'>mysql installed <br/>".$output."</div>";
 	
 } elseif($_GET["action"]=="install" && $_GET["package"]=="phpmyadmin"){
-	$output = shell_exec("sudo apt install phpmyadmin");
+	$output = shell_exec("sudo apt install -y phpmyadmin");
 	echo "<div class='msg'>phpmyadmin installed <br/>".$output."</div>";
 	
 } elseif($_GET["action"]=="remove" && $_GET["package"]=="cockpit-machines"){
-	$output = shell_exec("sudo apt remove cockpit-machines");
+	$output = shell_exec("sudo apt remove -y cockpit-machines");
 	echo "<div class='msg'>cockpit-machines removed <br/>".$output."</div>";
 	
 } elseif($_GET["action"]=="remove" && $_GET["package"]=="ldap"){
-	$output = shell_exec("sudo apt remove slapd ldap-utils");
+	$output = shell_exec("sudo apt remove -y slapd ldap-utils");
 	echo "<div class='msg'>ldap removed <br/>".$output."</div>";
 	
 } elseif($_GET["action"]=="remove" && $_GET["package"]=="phpldapadmin"){
-	$output = shell_exec("sudo apt remove phpldapadmin");
+	$output = shell_exec("sudo apt remove -y phpldapadmin");
 	echo "<div class='msg'>phpldapadmin removed <br/>".$output."</div>";
 	
 } elseif($_GET["action"]=="remove" && $_GET["package"]=="lam"){
-	$output = shell_exec("sudo apt remove ldap-account-manager");
+	$output = shell_exec("sudo apt remove -y ldap-account-manager");
 	echo "<div class='msg'>lam removed <br/>".$output."</div>";
 	
 } elseif($_GET["action"]=="remove" && $_GET["package"]=="dns"){
-	$output = shell_exec("sudo apt remove bind9");
+	$output = shell_exec("sudo apt remove -y bind9");
 	echo "<div class='msg'>dns removed <br/>".$output."</div>";
 	
 } elseif($_GET["action"]=="remove" && $_GET["package"]=="proxy"){
-	$output = shell_exec("sudo apt remove squid");
+	$output = shell_exec("sudo apt remove -y squid");
 	echo "<div class='msg'>proxy removed <br/>".$output."</div>";
 	
 } elseif($_GET["action"]=="remove" && $_GET["package"]=="webmin"){
-	$output = shell_exec("sudo apt remove webmin");
+	$output = shell_exec("sudo apt remove -y webmin");
 	echo "<div class='msg'>webmin removed <br/>".$output."</div>";
 	
 } elseif($_GET["action"]=="remove" && $_GET["package"]=="mail"){
-	$output = shell_exec("sudo apt remove sendmail");
+	$output = shell_exec("sudo apt remove -y sendmail");
 	echo "<div class='msg'>mail removed ".$output."</div>";
 	
 } elseif($_GET["action"]=="remove" && $_GET["package"]=="torrent"){
-	$output = shell_exec("sudo apt remove transmission-cli transmission-daemon");
+	$output = shell_exec("sudo apt remove -y transmission-cli transmission-daemon");
 	echo "<div class='msg'>cockpit-machines removed <br/>".$output."</div>";
 	
 	
 	
 } elseif($_GET["action"]=="remove" && $_GET["package"]=="mysql"){
-	$output = shell_exec("sudo apt remove mysql");
+	$output = shell_exec("sudo apt remove -y mysql");
 	echo "<div class='msg'>mysql removed <br/>".$output."</div>";
 	
 } elseif($_GET["action"]=="remove" && $_GET["package"]=="phpmyadmin"){
-	$output = shell_exec("sudo apt remove phpmyadmin");
+	$output = shell_exec("sudo apt remove -y phpmyadmin");
 	echo "<div class='msg'>phpmyadmin removed <br/>".$output."</div>";
 	
 } elseif($_GET["action"]=="update"){
-	$output = shell_exec("sudo apt update");
+	$output = shell_exec("sudo apt -y update");
 	echo "<div class='msg'>packages updated <br/>".$output."</div>";
 	
 } elseif($_GET["action"]=="upgrade"){
-	$output = shell_exec("sudo apt upgrade");
+	$output = shell_exec("sudo apt -y upgrade");
 	echo "<div class='msg'>packages upgraded <br/>".$output."</div>";
-	
-} else {
 	
 }
 
