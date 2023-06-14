@@ -58,9 +58,31 @@ sudo apt install -y ./phpldapadmin_1.2.6.3-0.2_all.deb");
 	$output = shell_exec("wget http://prdownloads.sourceforge.net/lam/ldap-account-manager_8.1-1_all.deb && sudo apt install -y -f ./ldap-account-manager_8.1-1_all.deb");
 	echo "<div class='msg'>lam installed <br/>".$output."</div>";
 	
+} elseif($_GET["action"]=="install" && $_GET["package"]=="dhcp"){
+	$output = shell_exec("sudo apt install -y isc-dhcp-server");
+	echo "<div class='msg'>dhcp installed <br/>".$output."</div>";
+	
 } elseif($_GET["action"]=="install" && $_GET["package"]=="dns"){
 	$output = shell_exec("sudo apt install -y bind9");
 	echo "<div class='msg'>dns installed <br/>".$output."</div>";
+	
+	
+} elseif($_GET["action"]=="install" && $_GET["package"]=="quagga"){
+	$output = shell_exec("sudo apt install -y quagga");
+	echo "<div class='msg'>quagga installed <br/>".$output."</div>";
+	
+} elseif($_GET["action"]=="install" && $_GET["package"]=="ftp"){
+	$output = shell_exec("sudo apt install -y vsftpd");
+	echo "<div class='msg'>ftp installed <br/>".$output."</div>";
+	
+} elseif($_GET["action"]=="install" && $_GET["package"]=="nfs"){
+	$output = shell_exec("sudo apt install -y nfs-kernel-server");
+	echo "<div class='msg'>nfs installed <br/>".$output."</div>";
+	
+} elseif($_GET["action"]=="install" && $_GET["package"]=="samba"){
+	$output = shell_exec("sudo apt install -y samba");
+	echo "<div class='msg'>samba installed <br/>".$output."</div>";
+	
 	
 } elseif($_GET["action"]=="install" && $_GET["package"]=="proxy"){
 	$output = shell_exec("sudo apt install -y squid");
@@ -71,8 +93,22 @@ sudo apt install -y ./phpldapadmin_1.2.6.3-0.2_all.deb");
 	echo "<div class='msg'>webmin installed <br/>".$output."</div>";
 	
 } elseif($_GET["action"]=="install" && $_GET["package"]=="mail"){
-	$output = shell_exec("sudo apt install -y sendmail");
+	$output = shell_exec("sudo apt install -y postfix");
 	echo "<div class='msg'>mail installed ".$output."</div>";
+	
+	
+} elseif($_GET["action"]=="install" && $_GET["package"]=="nagios"){
+	$output = shell_exec("sudo apt install -y nagios4");
+	echo "<div class='msg'>nagios installed ".$output."</div>";
+	
+} elseif($_GET["action"]=="install" && $_GET["package"]=="openvpn"){
+	$output = shell_exec("sudo apt install -y openvpn");
+	echo "<div class='msg'>openvpn installed ".$output."</div>";
+	
+} elseif($_GET["action"]=="install" && $_GET["package"]=="voip"){
+	$output = shell_exec("sudo apt install -y asterisk");
+	echo "<div class='msg'>voip installed ".$output."</div>";
+	
 	
 } elseif($_GET["action"]=="install" && $_GET["package"]=="torrent"){
 	$output = shell_exec("sudo apt install -y transmission-cli transmission-daemon");
@@ -104,9 +140,31 @@ sudo apt install -y ./phpldapadmin_1.2.6.3-0.2_all.deb");
 	$output = shell_exec("sudo apt remove -y ldap-account-manager");
 	echo "<div class='msg'>lam removed <br/>".$output."</div>";
 	
+} elseif($_GET["action"]=="remove" && $_GET["package"]=="dhcp"){
+	$output = shell_exec("sudo apt remove -y isc-dhcp-server");
+	echo "<div class='msg'>dhcp removed <br/>".$output."</div>";
+	
 } elseif($_GET["action"]=="remove" && $_GET["package"]=="dns"){
 	$output = shell_exec("sudo apt remove -y bind9");
 	echo "<div class='msg'>dns removed <br/>".$output."</div>";
+	
+	
+} elseif($_GET["action"]=="remove" && $_GET["package"]=="quagga"){
+	$output = shell_exec("sudo apt remove -y quagga");
+	echo "<div class='msg'>quagga removed <br/>".$output."</div>";
+	
+} elseif($_GET["action"]=="remove" && $_GET["package"]=="ftp"){
+	$output = shell_exec("sudo apt remove -y vsftpd");
+	echo "<div class='msg'>ftp removed <br/>".$output."</div>";
+	
+} elseif($_GET["action"]=="remove" && $_GET["package"]=="nfs"){
+	$output = shell_exec("sudo apt remove -y nfs-kernel-server");
+	echo "<div class='msg'>nfs removed <br/>".$output."</div>";
+	
+} elseif($_GET["action"]=="remove" && $_GET["package"]=="samba"){
+	$output = shell_exec("sudo apt remove -y samba");
+	echo "<div class='msg'>samba removed <br/>".$output."</div>";
+	
 	
 } elseif($_GET["action"]=="remove" && $_GET["package"]=="proxy"){
 	$output = shell_exec("sudo apt remove -y squid");
@@ -117,8 +175,22 @@ sudo apt install -y ./phpldapadmin_1.2.6.3-0.2_all.deb");
 	echo "<div class='msg'>webmin removed <br/>".$output."</div>";
 	
 } elseif($_GET["action"]=="remove" && $_GET["package"]=="mail"){
-	$output = shell_exec("sudo apt remove -y sendmail");
+	$output = shell_exec("sudo apt remove -y postfix");
 	echo "<div class='msg'>mail removed ".$output."</div>";
+	
+	
+} elseif($_GET["action"]=="remove" && $_GET["package"]=="nagios"){
+	$output = shell_exec("sudo apt remove -y nagios4");
+	echo "<div class='msg'>nagios removed ".$output."</div>";
+	
+} elseif($_GET["action"]=="remove" && $_GET["package"]=="openvpn"){
+	$output = shell_exec("sudo apt remove -y openvpn");
+	echo "<div class='msg'>openvpn removed ".$output."</div>";
+	
+} elseif($_GET["action"]=="remove" && $_GET["package"]=="voip"){
+	$output = shell_exec("sudo apt remove -y asterisk");
+	echo "<div class='msg'>voip removed ".$output."</div>";
+	
 	
 } elseif($_GET["action"]=="remove" && $_GET["package"]=="torrent"){
 	$output = shell_exec("sudo apt remove -y transmission-cli transmission-daemon");
@@ -201,6 +273,11 @@ sudo apt install -y ./phpldapadmin_1.2.6.3-0.2_all.deb");
 			<h2>PhpMyadmin</h2>
 			<p>Mysql administration tool</p>
 		</a>
+
+		<a target="_blank" href="/nagios4/" class="card">
+			<h2>Nagios</h2>
+			<p>Nagios supervision tool</p>
+		</a>
 		
 	<!--/div>
 	<div class="container"-->
@@ -220,15 +297,76 @@ sudo apt install -y ./phpldapadmin_1.2.6.3-0.2_all.deb");
 			<p>Install LDAP administration tool</p>
 		</a>
 
+		<a href="?action=install&package=mysql" class="card install">
+			<h2>Install MySQL</h2>
+			<p>Install Mysql database</p>
+		</a>
+
 		<a href="?action=install&package=phpmyadmin" class="card install">
 			<h2>Install PhpMyadmin</h2>
 			<p>Install Mysql administration tool</p>
 		</a>
 	
 		<a href="?action=install&package=cockpit-machines" class="card install">
-			<h2>Install cockpit-machines</h2>
+			<h2>Install Cockpit-machines</h2>
 			<p>Install VM management tool</p>
 		</a>
+	
+		<a href="?action=install&package=dhcp" class="card install">
+			<h2>Install DHCP</h2>
+			<p>Install isc-dhcp-server</p>
+		</a>
+	
+		<a href="?action=install&package=dns" class="card install">
+			<h2>Install DNS</h2>
+			<p>Install bind9</p>
+		</a>
+	
+		<a href="?action=install&package=quagga" class="card install">
+			<h2>Install Quagga</h2>
+			<p>Install quagga</p>
+		</a>
+	
+		<a href="?action=install&package=ftp" class="card install">
+			<h2>Install FTP</h2>
+			<p>Install vsftpd</p>
+		</a>
+	
+		<a href="?action=install&package=nfs" class="card install">
+			<h2>Install NFS</h2>
+			<p>Install nfs-kernel-server</p>
+		</a>
+	
+		<a href="?action=install&package=samba" class="card install">
+			<h2>Install Samba</h2>
+			<p>Install samba</p>
+		</a>
+	
+		<a href="?action=install&package=proxy" class="card install">
+			<h2>Install Proxy</h2>
+			<p>Install squid proxy</p>
+		</a>
+	
+		<a href="?action=install&package=mail" class="card install">
+			<h2>Install E-Mail</h2>
+			<p>Install postfix</p>
+		</a>
+	
+		<a href="?action=install&package=nagios" class="card install">
+			<h2>Install Nagios</h2>
+			<p>Install nagios</p>
+		</a>
+	
+		<a href="?action=install&package=openvpn" class="card install">
+			<h2>Install OpenVPN</h2>
+			<p>Install openvpn</p>
+		</a>
+	
+		<a href="?action=install&package=voip" class="card install">
+			<h2>Install VOIP</h2>
+			<p>Install asterisk</p>
+		</a>
+		
 		
 	<!--/div>
 	<div class="container"-->
@@ -248,14 +386,74 @@ sudo apt install -y ./phpldapadmin_1.2.6.3-0.2_all.deb");
 			<p>Remove LDAP administration tool</p>
 		</a>
 
+		<a href="?action=remove&package=mysql" class="card remove">
+			<h2>Remove Mysql</h2>
+			<p>Remove MySQL</p>
+		</a>
+
 		<a href="?action=remove&package=phpmyadmin" class="card remove">
 			<h2>Remove PhpMyadmin</h2>
 			<p>Remove Mysql administration tool</p>
 		</a>
 	
 		<a href="?action=remove&package=cockpit-machines" class="card remove">
-			<h2>Remove cockpit-machines</h2>
+			<h2>Remove Cockpit-machines</h2>
 			<p>Remove VM management tool</p>
+		</a>
+	
+		<a href="?action=remove&package=dhcp" class="card remove">
+			<h2>Remove DHCP</h2>
+			<p>Remove isc-dhcp-server</p>
+		</a>
+	
+		<a href="?action=remove&package=dns" class="card remove">
+			<h2>Remove DNS</h2>
+			<p>Remove bind9</p>
+		</a>
+	
+		<a href="?action=remove&package=quagga" class="card remove">
+			<h2>Remove Quagga</h2>
+			<p>Remove quagga</p>
+		</a>
+	
+		<a href="?action=remove&package=ftp" class="card remove">
+			<h2>Remove FTP</h2>
+			<p>Remove vsftpd</p>
+		</a>
+	
+		<a href="?action=remove&package=nfs" class="card remove">
+			<h2>Remove NFS</h2>
+			<p>Remove nfs-kernel-server</p>
+		</a>
+	
+		<a href="?action=remove&package=samba" class="card remove">
+			<h2>Remove Samba</h2>
+			<p>Remove samba</p>
+		</a>
+	
+		<a href="?action=remove&package=proxy" class="card remove">
+			<h2>Remove Proxy</h2>
+			<p>Remove squid proxy</p>
+		</a>
+	
+		<a href="?action=remove&package=mail" class="card remove">
+			<h2>Remove E-Mail</h2>
+			<p>Remove postfix</p>
+		</a>
+	
+		<a href="?action=remove&package=nagios" class="card remove">
+			<h2>Remove Nagios</h2>
+			<p>Remove nagios</p>
+		</a>
+	
+		<a href="?action=remove&package=openvpn" class="card remove">
+			<h2>Remove OpenVPN</h2>
+			<p>Remove openvpn</p>
+		</a>
+	
+		<a href="?action=remove&package=voip" class="card remove">
+			<h2>Remove VOIP</h2>
+			<p>Remove asterisk</p>
 		</a>
 	
 		<a href="?action=update" class="card update">
