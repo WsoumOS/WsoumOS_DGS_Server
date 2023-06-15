@@ -115,7 +115,6 @@ sudo apt install -y ./phpldapadmin_1.2.6.3-0.2_all.deb");
 	echo "<div class='msg'>cockpit-machines installed <br/>".$output."</div>";
 	
 	
-	
 } elseif($_GET["action"]=="install" && $_GET["package"]=="mysql"){
 	$output = shell_exec("sudo apt install -y mysql");
 	echo "<div class='msg'>mysql installed <br/>".$output."</div>";
@@ -123,6 +122,24 @@ sudo apt install -y ./phpldapadmin_1.2.6.3-0.2_all.deb");
 } elseif($_GET["action"]=="install" && $_GET["package"]=="phpmyadmin"){
 	$output = shell_exec("sudo apt install -y phpmyadmin");
 	echo "<div class='msg'>phpmyadmin installed <br/>".$output."</div>";
+	
+	
+} elseif($_GET["action"]=="install" && $_GET["package"]=="djando"){
+	$output = shell_exec("sudo apt install -y python3 python3-pip ; pip3 install django");
+	echo "<div class='msg'>djando installed <br/>".$output."</div>";
+	
+} elseif($_GET["action"]=="install" && $_GET["package"]=="nodejs"){
+	$output = shell_exec("sudo apt install -y nodejs");
+	echo "<div class='msg'>nodejs installed <br/>".$output."</div>";
+	
+} elseif($_GET["action"]=="install" && $_GET["package"]=="openstack"){
+	$output = shell_exec("sudo apt install -y openstack");
+	echo "<div class='msg'>openstack installed <br/>".$output."</div>";
+	
+} elseif($_GET["action"]=="install" && $_GET["package"]=="snort"){
+	$output = shell_exec("sudo apt install -y snort");
+	echo "<div class='msg'>snort installed <br/>".$output."</div>";
+	
 	
 } elseif($_GET["action"]=="remove" && $_GET["package"]=="cockpit-machines"){
 	$output = shell_exec("sudo apt remove -y cockpit-machines");
@@ -205,6 +222,26 @@ sudo apt install -y ./phpldapadmin_1.2.6.3-0.2_all.deb");
 } elseif($_GET["action"]=="remove" && $_GET["package"]=="phpmyadmin"){
 	$output = shell_exec("sudo apt remove -y phpmyadmin");
 	echo "<div class='msg'>phpmyadmin removed <br/>".$output."</div>";
+	
+	
+} elseif($_GET["action"]=="remove" && $_GET["package"]=="djando"){
+	$output = shell_exec("pip3 uninstall django ; sudo apt remove -y python3 python3-pip");
+	echo "<div class='msg'>djando removed <br/>".$output."</div>";
+	
+} elseif($_GET["action"]=="remove" && $_GET["package"]=="nodejs"){
+	$output = shell_exec("sudo apt remove -y nodejs");
+	echo "<div class='msg'>nodejs removed <br/>".$output."</div>";
+	
+} elseif($_GET["action"]=="remove" && $_GET["package"]=="openstack"){
+	$output = shell_exec("sudo apt remove -y openstack");
+	echo "<div class='msg'>openstack removed <br/>".$output."</div>";
+	
+} elseif($_GET["action"]=="remove" && $_GET["package"]=="snort"){
+	$output = shell_exec("sudo apt remove -y snort");
+	echo "<div class='msg'>snort removed <br/>".$output."</div>";
+	
+	
+	
 	
 } elseif($_GET["action"]=="update"){
 	$output = shell_exec("sudo apt -y update");
@@ -366,6 +403,28 @@ sudo apt install -y ./phpldapadmin_1.2.6.3-0.2_all.deb");
 			<h2>Install VOIP</h2>
 			<p>Install asterisk</p>
 		</a>
+	
+	
+		<a href="?action=install&package=djando" class="card install">
+			<h2>Install Djando</h2>
+			<p>Install djando</p>
+		</a>
+	
+		<a href="?action=install&package=nodejs" class="card install">
+			<h2>Install NodeJS</h2>
+			<p>Install nodejs</p>
+		</a>
+	
+		<a href="?action=install&package=openstack" class="card install">
+			<h2>Install OpenStack</h2>
+			<p>Install openstack</p>
+		</a>
+	
+		<a href="?action=install&package=snort" class="card install">
+			<h2>Install Snort</h2>
+			<p>Install snort</p>
+		</a>
+		
 		
 		
 	<!--/div>
@@ -454,6 +513,27 @@ sudo apt install -y ./phpldapadmin_1.2.6.3-0.2_all.deb");
 		<a href="?action=remove&package=voip" class="card remove">
 			<h2>Remove VOIP</h2>
 			<p>Remove asterisk</p>
+		</a>
+	
+	
+		<a href="?action=remove&package=djando" class="card remove">
+			<h2>Remove Djando</h2>
+			<p>Remove djando</p>
+		</a>
+	
+		<a href="?action=remove&package=nodejs" class="card remove">
+			<h2>Remove NodeJS</h2>
+			<p>Remove nodejs</p>
+		</a>
+	
+		<a href="?action=remove&package=openstack" class="card remove">
+			<h2>Remove OpenStack</h2>
+			<p>Remove openstack</p>
+		</a>
+	
+		<a href="?action=remove&package=snort" class="card remove">
+			<h2>Remove Snort</h2>
+			<p>Remove snort</p>
 		</a>
 	
 		<a href="?action=update" class="card update">
